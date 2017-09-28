@@ -2,17 +2,21 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/ivan/.oh-my-zsh
+export ZSH=/Users/sinegovsky/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ssh status root_indicator background_jobs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir rbenv vcs dir_writable)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ssh status root_indicator background_jobs command_execution_time nvm node_version nodeenv)
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
+
+POWERLEVEL9K_NODE_VERSION_BACKGROUND='28'
+POWERLEVEL9K_NODE_VERSION_FOREGROUND='15'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -56,7 +60,7 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew docker node npm osx yarn)
+plugins=(git brew docker node npm osx sudo)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -88,3 +92,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
